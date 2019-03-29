@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button } from 'react-native'
 import Posts from '../components/posts'
 import axios from 'axios'
 import secrets from '../secrets.json'
+import { connect } from 'react-redux'
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -83,3 +84,13 @@ export default class SettingsScreen extends React.Component {
     )
   }
 }
+
+export const mapStateToProps = state => ({
+  username: state.login.username,
+  password: state.login.password,
+  token: state.login.token
+})
+
+export const mapDispatchToProps = dispatch => ({
+  // setUsername:
+})
